@@ -1,0 +1,74 @@
+[
+  {
+    "id": "email_001",
+    "from": "sarah.chen@nexaworks.com",
+    "to": "julius.waggoner@nexaworks.com",
+    "subject": "Q2 Dashboard Redesign — scope doc ready for review",
+    "date": "2026-04-22T09:14:00",
+    "thread_id": "thread_dashboard_q2",
+    "body": "Hey Julius,\n\nFinally got the scope doc out of draft purgatory. You can find it in the shared Drive folder under 'Projects / Q2 Dashboard.' Main things I want your eyes on:\n\n1. The proposed data refresh interval — I went with 15-minute polling but wasn't sure if that'd hit our API rate limits.\n2. The mobile breakpoints section. I basically guessed based on last quarter's analytics and I'd love a sanity check.\n\nI'm targeting a first-draft Figma handoff to the devs by May 6, so if you can turn around feedback by end of week I'd really appreciate it.\n\nAlso — are you coming to the all-hands Thursday? I want to carve out 10 minutes to walk through the timeline with the rest of the team.\n\nThanks,\nSarah"
+  },
+  {
+    "id": "email_002",
+    "from": "julius.waggoner@nexaworks.com",
+    "to": "sarah.chen@nexaworks.com",
+    "subject": "Re: Q2 Dashboard Redesign — scope doc ready for review",
+    "date": "2026-04-29T11:47:00",
+    "thread_id": "thread_dashboard_q2",
+    "body": "Sarah,\n\nSorry for the slow turn — got pulled into the Harrington stuff most of last week. Notes below:\n\n1. Rate limits: We're on the Pro tier which gives us 120 requests/min per endpoint. 15-minute polling across ~40 users should be fine. If we ever scale past 200 concurrent users we'd want to revisit, but not a concern for Q2.\n\n2. Mobile breakpoints look reasonable. I'd bump the tablet breakpoint from 768px to 820px to account for the iPad Air — it was showing up weirdly in last quarter's session recordings.\n\nI can make the all-hands Thursday. Want to do a quick 15-min sync Wednesday afternoon first so we're aligned before we present?\n\n– Julius"
+  },
+  {
+    "id": "email_003",
+    "from": "marcus.okafor@nexaworks.com",
+    "to": "julius.waggoner@nexaworks.com",
+    "subject": "API migration — we have a problem with the auth layer",
+    "date": "2026-04-24T16:02:00",
+    "thread_id": "thread_api_migration",
+    "body": "Julius,\n\nHit a wall this afternoon. The legacy auth middleware is issuing tokens with a 6-hour expiry hardcoded in the old config — it's not reading from the environment variable the way we assumed it was. This means when we cut over to the new service, any sessions that were issued under the old middleware will fail silently on refresh instead of redirecting to login.\n\nI've got a fix drafted (basically a compatibility shim that checks both expiry formats), but it needs a proper review before we touch prod. Can you take a look at the PR? It's #847 in the repo.\n\nAlso flagging: this pushes our cutover timeline by at least 2 days. I'd rather delay than ship a broken auth flow on a Friday.\n\nLet me know what you think.\n\nMarcus"
+  },
+  {
+    "id": "email_004",
+    "from": "david.harrington@harringtonlegal.com",
+    "to": "julius.waggoner@nexaworks.com",
+    "subject": "Annual Service Agreement Renewal — NexaWorks / Harrington Legal Group",
+    "date": "2026-04-28T08:30:00",
+    "thread_id": "thread_harrington_renewal",
+    "body": "Dear Mr. Waggoner,\n\nI hope this message finds you well. I am writing to initiate the renewal discussion for our annual service agreement, which is scheduled to expire on June 30, 2026.\n\nHarrington Legal Group has been pleased with the platform reliability and support responsiveness over the past year. That said, our IT governance committee has asked me to formally request the following before we execute renewal documents:\n\n1. A written summary of any infrastructure changes made since the last agreement was signed, particularly as they relate to data residency and backup retention policies.\n2. Confirmation that NexaWorks remains SOC 2 Type II compliant and that the current certification is valid through at least December 2026.\n3. An updated Data Processing Addendum reflecting the amended state privacy statutes that came into effect in January.\n\nIf it would be more efficient, I am happy to schedule a call with your legal and technical contacts directly. My availability this week is Thursday after 2:00 PM Eastern or any time Friday.\n\nThank you for your continued partnership.\n\nSincerely,\nDavid R. Harrington\nManaging Partner, Harrington Legal Group\n617-555-0192"
+  },
+  {
+    "id": "email_005",
+    "from": "jenny.kowalski@brightleafco.com",
+    "to": "julius.waggoner@nexaworks.com",
+    "subject": "hey — quick check on the reporting thing",
+    "date": "2026-05-01T13:22:00",
+    "thread_id": "thread_kowalski_reports",
+    "body": "Julius!\n\nOkay so I finally sat down to run the monthly export and I can't figure out where the new date filter went. Last month there was a dropdown right above the table and now I'm just not seeing it? Could be user error on my end lol but wanted to check before I bug your team formally.\n\nAlso semi-related — any chance we could get the export to include the 'assigned to' column? Right now I have to manually cross-reference with our internal sheet every month and it's kind of a pain. Totally understand if it's a bigger lift, just figured I'd ask!\n\nHope you're having a good week :)\n\nJenny\nBrightleaf Co."
+  },
+  {
+    "id": "email_006",
+    "from": "priya.mehta@datastackio.com",
+    "to": "julius.waggoner@nexaworks.com",
+    "subject": "Datastack — cut your pipeline build time by 60%",
+    "date": "2026-04-23T10:05:00",
+    "thread_id": "thread_vendor_datastack",
+    "body": "Hi Julius,\n\nI came across NexaWorks while researching companies in the B2B SaaS space and wanted to reach out. I'm Priya from Datastack — we help engineering teams replace hand-rolled ETL pipelines with a managed, schema-aware orchestration layer that connects to 200+ sources out of the box.\n\nA few things that tend to resonate with teams your size:\n\n• Automatic schema drift detection — no more surprise pipeline failures on Monday morning\n• Native dbt integration if your team is already using it\n• SOC 2 Type II certified (full report available on request)\n\nI'd love to show you a 20-minute demo tailored to your stack. Would any time next week work for a quick call?\n\nEither way, happy to send over our case study with Meridian Analytics — they were in a similar position and cut pipeline failures by 73% in the first quarter.\n\nBest,\nPriya Mehta\nAccount Executive, Datastack\npriya@datastackio.com | (415) 555-0847"
+  },
+  {
+    "id": "email_007",
+    "from": "noreply@nexaworks-hr.com",
+    "to": "allstaff@nexaworks.com",
+    "subject": "Action required: 2026 benefits open enrollment closes May 9",
+    "date": "2026-04-30T07:00:00",
+    "thread_id": "thread_internal_benefits",
+    "body": "Hi everyone,\n\nThis is a reminder that the 2026 benefits open enrollment window closes on Friday, May 9 at 11:59 PM Pacific.\n\nIf you do not make changes by the deadline, your current elections will roll over automatically — with one exception: FSA/HSA contributions do not roll over and must be re-elected each year.\n\nWhat's new this year:\n• Medical Plan C (High Deductible) now includes a $500 employer HSA seed contribution\n• Dental coverage has been expanded to include orthodontics for dependents up to age 26\n• The Employee Assistance Program (EAP) now offers 12 free counseling sessions per year, up from 6\n\nTo review your options and make changes, log in to the benefits portal at benefits.nexaworks.internal. If you have questions, reach out to HR at hr@nexaworks.com or drop by the virtual office hours held every Tuesday from 12–1 PM Pacific (link in the company calendar).\n\nBest,\nThe People & Operations Team\nNexaWorks"
+  },
+  {
+    "id": "email_008",
+    "from": "tom.reyes@cloudsecure.io",
+    "to": "julius.waggoner@nexaworks.com",
+    "subject": "Penetration testing & compliance readiness for NexaWorks",
+    "date": "2026-05-02T09:30:00",
+    "thread_id": "thread_vendor_cloudsecure",
+    "body": "Hi Julius,\n\nI'm Tom from CloudSecure — we specialize in penetration testing, vulnerability assessments, and compliance readiness for SaaS companies.\n\nI noticed NexaWorks serves clients in the legal and financial sectors, which typically means heightened scrutiny around SOC 2, HIPAA, and state-level data privacy requirements. We've helped 40+ companies in similar positions get audit-ready and stay that way without it becoming a full-time job for their engineering teams.\n\nOur standard engagement includes:\n• External + internal network penetration test\n• Web application assessment (OWASP Top 10 coverage)\n• Findings report with prioritized remediation steps\n• Optional: 60-day remediation support retainer\n\nWe're currently booking for June and have a few slots open. Would it make sense to get on a call this week or next to see if there's a fit?\n\nThanks for your time,\nTom Reyes\nDirector of Business Development, CloudSecure\ntom.reyes@cloudsecure.io | (512) 555-0374"
+  }
+]
